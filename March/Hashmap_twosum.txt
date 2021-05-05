@@ -1,0 +1,20 @@
+import java.util.HashMap;
+
+public class sumTwo {
+    public int[] Summ(int[] nums, int target) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int[] a= new int[2];
+        for (int i = 0; i < nums.length; i++) {
+            map.put(nums[i], i);
+        }
+        for (int j = 0; j < nums.length; j++) {
+            if (map.containsKey(target - nums[j])) {
+             a[0] =  map.get(target-nums[j]);
+             a[1] = j;
+
+            }
+
+        }
+        return a;
+    }
+}
